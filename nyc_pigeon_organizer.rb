@@ -10,6 +10,7 @@ def nyc_pigeon_organizer (data)
     if !new_sort[name][key] #if there is no value, set the value equal to array
       new_sort[name][key] = []
     end
+    binding.pry
     new_sort[name][key] << describe.to_s #fill the array with purp, male, sub values
   end
 end
