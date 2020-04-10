@@ -1,41 +1,20 @@
+require 'pry'
 def nyc_pigeon_organizer (data)
-  final = {}
+  new_sort = {}
+  data.each do |key, value| #key: c_g_l #value: hash
+  value.each do |describe, array| #describe: purp,male, sub #array: array of names
+  array.each do |name| #name: index
+    if !new_sort[name] #if there is no key = name, set key equal to hash
+      new_sort[name] = {}
+    end
+    if !new_sort[name][key] #if there is no value, set the value equal to array
+      new_sort[name][key] = []
+    end
+    new_sort[name][key] << describe.to_s #fill the array with purp, male, sub values
+  end
+end
+end
 
-  data.each do |first_level, all_other|
-    all_other.each do |category, array|
-      array.each do |name|
-        final[name] = {:color => [], :gender => [], :lives => []}
-      end
-    end
-  end
-  x = final.keys
-  data[:color].each do |bird_color, name|
-    name.each do |bird_name|
-      x.each do |item|
-        if bird_name === item
-          final[item][:color] << bird_color.to_s
-        end
-      end
-    end
-  end
-  data[:gender].each do |gender, type|
-    type.each do |bird_name|
-      x.each do |item|
-        if bird_name === item
-          final[item][:gender] << gender.to_s
-        end
-      end
-    end
-  end
-  data[:lives].each do |location, name|
-    name.each do |bird_name|
-      x.each do |item|
-        if bird_name === item
-          final[item][:lives] << location
-        end
-      end
-    end
-  end
+new_sort
 
-  return final
 end
