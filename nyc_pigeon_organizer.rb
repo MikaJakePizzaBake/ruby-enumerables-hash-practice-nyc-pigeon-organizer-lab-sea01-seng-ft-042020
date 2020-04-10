@@ -10,3 +10,7 @@ data.each do |key, value|
       if !new_hash[name][key]
         new_hash[name][key] = []
       end
+    end
+  end
+end
+end
