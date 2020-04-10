@@ -1,18 +1,20 @@
 require 'pry'
 def nyc_pigeon_organizer (data)
-new_hash = {}
-data.each do |key, value|
-  value.each do |new_key, name_array|
-    name_array.each do |name|
-      if !new_hash[name]
-        new_hash[name] == {}
-      end
-      if !new_hash[name][key]
-        new_hash[name][key] = []
-      end
-      new_hash[name][key] << new_key.to_s
+  new_sort = {}
+  data.each do |key, value| #key: c_g_l #value: hash
+  value.each do |describe, array| #describe: purp,male, sub #array: array of names
+  array.each do |name| #name: index
+    if !new_sort[name] #if there is no key = name, set key equal to hash
+      new_sort[name] = {}
     end
+    if !new_sort[name][key] #if there is no value, set the value equal to array
+      new_sort[name][key] = []
+    end
+    new_sort[name][key] << describe.to_s #fill the array with purp, male, sub values
   end
 end
-  new_hash
+end
+
+new_sort
+
 end
