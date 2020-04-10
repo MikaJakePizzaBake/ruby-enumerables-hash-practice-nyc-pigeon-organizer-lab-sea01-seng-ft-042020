@@ -5,5 +5,5 @@ data.each do |key, value|
   value.each do |new_key, name_array|
     binding.pry
     name_array.each do |name|
-    
+
 end
