@@ -13,3 +13,5 @@ data.each do |key, value|
       new_hash[name][key] << new_key.to_s
     end
   end
+  new_hash
+end
