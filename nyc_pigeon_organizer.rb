@@ -4,14 +4,15 @@ def nyc_pigeon_organizer (data)
   data.each do |key, value| #key: c_g_l #value: hash
   value.each do |describe, array| #describe: purp,male, sub #array: array of names
   array.each do |name| #name: index
-    if !new_sort[name] #if there is no key = name, set key equal to hash
+    if !new_sort[name]
       new_sort[name] = {}
     end
-    if !new_sort[name][key] #if there is no value, set the value equal to array
+    binding.pry
+    if !new_sort[name][key]
       new_sort[name][key] = []
     end
     binding.pry
-    new_sort[name][key] << describe.to_s #fill the array with purp, male, sub values
+    new_sort[name][key] << describe.to_s
   end
 end
 end
