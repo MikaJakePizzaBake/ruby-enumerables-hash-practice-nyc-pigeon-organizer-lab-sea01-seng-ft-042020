@@ -11,7 +11,6 @@ def nyc_pigeon_organizer (data)
       new_sort[name][key] = [] #Since there is no keys to the name, they will be assigned as c_g_l, and
       # the value will be equal to an array
     end
-    binding.pry
     new_sort[name][key] << describe.to_s #since describe is symbols, the values of the new_sort has to be turned into string.
   end
 end
